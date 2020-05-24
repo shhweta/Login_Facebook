@@ -1,9 +1,10 @@
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.apache.commons.io.FileUtils;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -11,19 +12,17 @@ import java.io.IOException;
 public class FacebookTest {
 
 
-
-
     public static void main(String[] args) throws InterruptedException, IOException {
 
 //Creating reference of Webdriver Interface
-    WebDriver driver;
+        WebDriver driver;
 
 //Declare Facebook Credentials
-        String user="username";
-        String pass="password";
+        String user = "username";
+        String pass = "password";
 
 
-//
+
 
 //Creating an instance of chrome level class to disable browser level notifications
         ChromeOptions coptions = new ChromeOptions();
@@ -69,11 +68,6 @@ public class FacebookTest {
         System.out.println("logged in successfully");
 
 
-
-
-
-
-
 // open post box
         WebDriverWait wait = new WebDriverWait(driver, 500);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='pipptul6 a5q79mjw']")));
@@ -96,8 +90,6 @@ public class FacebookTest {
         FileUtils.copyFile(srce, new File("./src/main/resources/screenshot/FbStatus.png"));
 
 
-
-
 //Wait
         Thread.sleep(2000);
 
@@ -109,8 +101,6 @@ public class FacebookTest {
 //Click on Log out button
         WebElement logout = driver.findElement(By.xpath("//html//body"));
         System.out.println("log out successfully");
-
-
 
 
 //Wait
